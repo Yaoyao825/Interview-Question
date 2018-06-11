@@ -10,7 +10,6 @@ def get_max_population():
         #the difference of col. 2 and col. 1 (death date)
     csvname = input("Enter filename ('filename.csv'): ")
     with open(csvname, newline='') as f:
-    #with open('datese.csv', newline='') as f:
         reader = csv.reader(f)
         for row in reader:
             birth_year = int(row[0])
@@ -23,14 +22,12 @@ def get_max_population():
             while i <= n:
                 pop_list[i] = pop_list[i] + 1
                 i = i + 1
-        #take into consideration multiple years having the same number of people alive
-        j = 0
+                j = 0
         max_population = 0
         years = []
         while j <= 100:
             if pop_list[j] > max_population:
                 max_population = pop_list[j]
-                #reset year list if new maximum population
                 years = []
             if pop_list[j] == max_population:
                 year_to_append = 1900 + j
